@@ -8,7 +8,7 @@ jdk:
 
 before_install:
   - mvn install -DskipTests=true -DfinalName=helloci
-  - pip install codecov
+  - pip install --user codec
 
 install:
   - mvn clean install test
