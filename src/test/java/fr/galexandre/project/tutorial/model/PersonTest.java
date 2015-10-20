@@ -64,4 +64,15 @@ public class PersonTest {
         p.setAdress(address);
         assertTrue(StringUtils.equals(p.getAdress().getCity(),"testCity"));
     }
+
+    @Test
+    public void testPersonCreation(){
+        DateUtils d = new DateUtils();
+        Address address = new Address("Street unitTesting","TestCity","0001");
+        Person p = new Person("Test","Test",d,address);
+        assertTrue(StringUtils.equals(p.getLastName(),"Test"));
+        assertTrue(StringUtils.equals(p.getFirstName(),"Test"));
+        assertTrue(d.equals(p.getDateOfBirthday()));
+    }
+
 }
