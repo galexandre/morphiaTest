@@ -1,5 +1,6 @@
 package fr.galexandre.project.tutorial.model;
 
+import org.bson.types.ObjectId;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
@@ -73,6 +74,14 @@ public class PersonTest {
         assertTrue(StringUtils.equals(p.getLastName(),"Test"));
         assertTrue(StringUtils.equals(p.getFirstName(),"Test"));
         assertTrue(d.equals(p.getDateOfBirthday()));
+    }
+
+
+    @Test
+    public void testGetId() throws Exception {
+        ObjectId objectId = new ObjectId();
+        p.setId(objectId);
+        assertTrue(p.getId().equals(objectId));
     }
 
 }
