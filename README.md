@@ -6,9 +6,3 @@
 
 ![codecov.io](https://codecov.io/github/galexandre/morphiaTest/branch.svg?branch=master)
 
-#MorphiaTest
-
-Welcome to the MorphiaTest repository.
-
-##Goal
-The goal of this repository is to show you how works morphia frameworks.
