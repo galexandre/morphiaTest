@@ -1,11 +1,12 @@
 package fr.galexandre.project.tutorial.model;
 
-import org.bson.types.ObjectId;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.time.DateUtils;
+import org.bson.types.ObjectId;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.util.Date;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by galexandre on 30/09/15.
@@ -40,14 +41,14 @@ public class PersonTest {
 
     @Test
     public void testGetDateOfBirthday() throws Exception {
-        DateUtils date = new DateUtils();
+        Date date = new Date();
         p.setDateOfBirthday(date);
         assertTrue(date.equals(p.getDateOfBirthday()));
     }
 
     @Test
     public void testSetDateOfBirthday() throws Exception {
-        DateUtils date = new DateUtils();
+        Date date = new Date();
         p.setDateOfBirthday(date);
         assertTrue(date.equals(p.getDateOfBirthday()));
     }
@@ -68,7 +69,7 @@ public class PersonTest {
 
     @Test
     public void testPersonCreation(){
-        DateUtils d = new DateUtils();
+        Date d = new Date();
         Address address = new Address("Street unitTesting","TestCity","0001");
         Person p = new Person("Test","Test",d,address);
         assertTrue(StringUtils.equals(p.getLastName(),"Test"));
@@ -84,4 +85,13 @@ public class PersonTest {
         assertTrue(p.getId().equals(objectId));
     }
 
+    @Test
+    public void testToString() throws Exception {
+        Address address = new Address("Street unitTesting","TestCity","0001");
+        p.setAdress(address);
+        String res= "id: "+p.getId()+"; address:"+
+                p.getAdress().toString()+"; firstname:"+p.getFirstName()+"; lastname:"+
+                p.getLastName();
+        assertTrue(StringUtils.equals(res,p.toString()));
+    }
 }

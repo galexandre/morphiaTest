@@ -47,4 +47,11 @@ public class AddressTest {
         address.setPostalCode("00005");
         assertTrue(StringUtils.equals(address.getPostalCode(),"00005"));
     }
+
+    @org.junit.Test
+    public void testToString() throws Exception {
+        String res = "city: "+address.getCity()+"street: "+address.getStreet()+
+                "postal code:"+address.getPostalCode();
+        assertTrue(StringUtils.equals(res,address.toString()));
+    }
 }

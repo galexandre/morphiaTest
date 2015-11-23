@@ -1,10 +1,11 @@
 package fr.galexandre.project.tutorial.model;
 
-import org.apache.commons.lang3.time.DateUtils;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
+
+import java.util.Date;
 
 /**
  * Created by galexandre on 30/09/15.
@@ -16,7 +17,7 @@ public class Person {
     private ObjectId id;
     private String firstName;
     private String lastName;
-    private DateUtils dateOfBirthday;
+    private Date dateOfBirthday;
     @Embedded
     private Address adress;
 
@@ -33,7 +34,7 @@ public class Person {
      * @param dateOfBirthday : date of birth of the person
      * @param adress : address of the person
      */
-    public Person(String firstName, String lastName, DateUtils dateOfBirthday, Address adress) {
+    public Person(String firstName, String lastName, Date dateOfBirthday, Address adress) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirthday = dateOfBirthday;
@@ -76,7 +77,7 @@ public class Person {
      * Return the date of birth of the person
      * @return : the date of birth
      */
-    public DateUtils getDateOfBirthday() {
+    public Date getDateOfBirthday() {
         return dateOfBirthday;
     }
 
@@ -84,7 +85,7 @@ public class Person {
      * Give a date of birth to the person
      * @param dateOfBirthday : the date of birth (DateUtils)
      */
-    public void setDateOfBirthday(DateUtils dateOfBirthday) {
+    public void setDateOfBirthday(Date dateOfBirthday) {
         this.dateOfBirthday = dateOfBirthday;
     }
 

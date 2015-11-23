@@ -78,6 +78,11 @@ public class Address {
         this.postalCode = postalCode;
     }
 
+    /**
+     * Method which return in a String format all the information
+     * from the current object (city, street, address, postal code)
+     * @return a String which contains all the information
+     */
     public String toString(){
         String res = "city: "+city+"street: "+street+"postal code:"+postalCode;
         return res;
