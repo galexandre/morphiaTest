@@ -14,4 +14,3 @@ install:
   - mvn clean install test
 after_success:
   - codecov
-  - coveralls
